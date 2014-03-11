@@ -1,0 +1,541 @@
+<style>
+
+	.border-rounded
+	{
+		border-radius: 10px;
+	}	
+
+	.navbar-wrapper
+	{
+
+		margin-top: 20px;
+
+	}
+
+	.navbar-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 20;
+
+	}
+
+	#myCarousel {
+		margin-bottom: 20px;
+    box-shadow:0px 10px 5px #888888;
+	}
+
+  .margin-right {
+    margin-right: 30px;
+
+  }
+
+  .margin-right-buttons {
+    margin-right: 60px;
+
+  }
+
+  .marketing {
+    margin-top: 60px;
+    text-align:center;
+  }
+
+  .mid-size-icons {
+    font-size: 300%;
+
+  }
+
+  .large-size-icons {
+    font-size: 700%;
+
+  }
+
+  .margin-about {
+    margin-top: 150px
+
+  }
+
+  .margin-thanks {
+    margin-top: 100px;
+    margin-bottom: 300px
+  }
+
+  .text-align-center {
+    text-align:center;
+  }
+
+  .log-in-modal {
+    border-right:solid grey;
+
+  }
+
+  .image-circle {
+    border-radius: 50%;
+    box-shadow: 0px 20px 40px rgba(0,0,0,.5);
+  }
+
+  .blurred-edges {
+    box-shadow: 0px 0px 20px rgba(0,0,0,.5);
+
+  }
+
+  .center-y{
+    vertical-align:middle;
+    height: 300px;
+  }
+
+  .sign-up-feature {
+    margin-top: 150px;
+  }
+
+  .vertical-center { 
+    margin-top: 20%;
+  }
+
+</style>
+
+<div class="navbar-wrapper">
+  <div class="container">
+    <div class="navbar navbar-inverse navbar-static-top border-rounded" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Quotable.guru</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+        </div>
+          
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#Discover">Discover</a></li>
+            <li><a href="#Share">Share</a></li>
+            <li><a href="#Personalize">Personalize</a></li>
+            <li><a href="#Personalize">Inspiration</a></li>
+          </ul>
+          <ul class="nav navbar-nav pull-right margin-right">
+
+            <% if user_signed_in? %>
+
+              <li>
+                <button class="btn btn-primary navbar-btn" onclick="location.href='/home'">
+                  My Quotes
+                </button>
+              </li>
+
+              <ul class="navbar-nav navbar-right">
+
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle margin-right" data-toggle="dropdown">
+
+                    <%= current_user.full_name %> &nbsp
+
+                    <%=image_tag current_user.profile_pic_url, size: "50x50"%>
+
+                    <b class="caret"></b>
+                  </a>
+        
+                  <ul class="dropdown-menu">
+                
+                    <li>
+                      <a href="#">
+                        Profile Settings
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/users/sign_out">
+                        Log Out
+                      </a>
+                    </li>
+          
+                  </ul>
+                </li>
+              </ul>
+
+              <% else %>
+                <li>
+                  <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#SignUpModal">Sign Up</button>
+
+                  &nbsp                   &nbsp
+      
+
+                  <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#LoginModal">Log in</button>
+                </li>
+
+              <% end %>
+              </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Carousel -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+<!--
+        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+-->
+
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          
+          <%= image_tag "homepage/archimedes.gif", :class => "img-responsive" %>
+
+          <div class="container">
+            <div class="carousel-caption hidden-xs">
+              
+              <div style="background-color:rgba(0,0,0,0.7)">
+
+                <h2>
+                  Give me a lever long enough and a fulcrum on which to place it, and I shall move the world. ~Archimedes
+
+                </h2>
+
+              </div>
+              
+            </div>
+          </div>
+        </div>
+<!--        
+        <div class="item">
+
+          <%= image_tag "homepage/women-working-out.jpg", :class => "img-responsive" %>
+
+          <div class="container">
+            <div class="carousel-caption hidden-xs">
+              <h1>Keep a record of your workouts</h1>
+              <p>Easy workout tracker makes it easy to keep a record of your workouts and observe trends and get summary reports</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="item">
+
+          <%= image_tag "homepage/rsz_people_running_on_treadmills.jpg", :class => "img-responsive" %>
+
+
+          <div class="container">
+            <div class="carousel-caption hidden-xs">
+              <h1>Keep Yourself Motivated</h1>
+              <p>Share tips, workouts, and receive kudos from your friends!</p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      -->
+ 
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+
+    </div>
+</div>
+
+<!-- Icon Bar -->
+
+<div class="container marketing">
+  <div class="row">
+        <div class="col-lg-4">
+          
+          <a href="#Discover">
+            <span class="mid-size-icons glyphicon glyphicon-pencil">
+            </span>
+          </a>
+
+
+          <h2>Discover</h2>
+
+          <p>Search from over a million quotes, discover new ones contributed by your friends</p>
+
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+
+          <span class="mid-size-icons glyphicon glyphicon-th">
+          </span>
+
+          <h2>Share</h2>
+          <p></p>
+
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+          
+          <span class="mid-size-icons glyphicon glyphicon glyphicon-thumbs-up">
+          </span>
+
+          <h2>Personal Profile</h2>
+          <p></p>
+
+        </div>
+
+      </div> 
+</div>
+
+<!-- Sections -->
+
+<!-- Discover -->
+<a name="Discover"></a>
+<hr class="featurette-divider margin-about">   
+<div class="container">
+  <h1>
+    <span class="glyphicon glyphicon-log-in"></span>
+    &nbsp
+    Discover Great Quotes! 
+  </h1>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <br/>
+      <h4>
+        Its super easy, simply create an account with your email or facebook and start recording!
+      </h4>
+
+      <div class="sign-up-feature">
+        <center>
+
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#SignUpModal">Sign Up</button>
+
+          &nbsp
+
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#LoginModal">Log in</button>
+
+      </center>
+      </div>
+    </div>
+
+    <div class="col-lg-offset-1 col-lg-1">
+      <%= image_tag "homepage/resized-sprinting-girl-Copy.jpg", :class => "image-circle" %>
+    </div>
+
+  </div>
+  <br/>        
+</div>
+
+<!-- Share -->
+<a name="Share"></a>
+<hr class="featurette-divider"> 
+<div class="container margin-thanks">
+  <h1>
+    <span class="glyphicon glyphicon-thumbs-up"></span>
+      &nbsp
+      &nbsp
+      Share Meaningful Quotes!
+  </h1>
+
+  <div class="row">
+    <div class="col-lg-4">
+      <br/>
+
+       <%= image_tag "homepage/people-with-thank-you-sign.jpg", :class => "image-circle img-responsive" %>
+
+    </div>
+    <div class="col-lg-offset-2 col-lg-6">
+      <div class="sign-up-feature">
+        <h3>
+          We'd love to hear from you and what we should add. Please let us know! <a href="mailto:varun.bhartia@gmail.com">Give us feedback</a>
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Personalize -->
+<a name="Personalize"></a> 
+<hr class="featurette-divider">
+<div class="container margin-thanks">
+  <h1>
+    <span class="glyphicon glyphicon-thumbs-up"></span>
+      &nbsp
+      &nbsp
+      Personalize!
+  </h1>
+
+  <div class="row">
+    <div class="col-lg-4">
+      <br/>
+
+       <%= image_tag "homepage/people-with-thank-you-sign.jpg", :class => "image-circle img-responsive" %>
+
+    </div>
+    <div class="col-lg-offset-2 col-lg-6">
+      <div class="sign-up-feature">
+        <h3>
+          We'd love to hear from you and what we should add. Please let us know! <a href="mailto:varun.bhartia@gmail.com">Give us feedback</a>
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+        <h4 class="modal-title" id="myModalLabel">Log into Easy Workout Tracker</h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6 log-in-modal">
+            <h4>
+              Manual Login:
+
+            </h4>
+            <br/>
+              <%= form_for(:user, :url => session_path(:user)) do |f| %>
+                Email: 
+                <br/>
+                  <%= f.text_field :email %>
+                <br/>
+                <br/>
+                Password: <%= f.password_field :password %>
+                <br/>
+                <br/>
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+                <br/>
+                <%= f.submit 'Sign in' %>
+                <br/>
+                <br/>
+                <%= link_to "Forgot your password?", new_password_path(:user) %>
+              <% end %>
+          </div>
+
+          <div class="col-md-6">
+            <h4>
+              Login with your social network
+            </h4>
+
+            <div class="text-align-center">    
+
+            <div class="vertical-center"> 
+            <button class="btn btn-primary btn-large" onclick="location.href='/auth/facebook'">
+              <h4>  
+                <span class="fa fa-facebook"></span>
+                facebook
+              </h4>          
+            </button>
+            <br/>
+            <br/>
+              <button class="btn btn-primary btn-large" onclick="location.href='/auth/facebook'">
+              <h4>  
+                <span class="fa fa-google-plus"></span>
+                google
+              </h4>          
+            </button>
+          </div>
+        </div>
+          
+
+          </div>
+
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="SignUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+        <h4 class="modal-title" id="myModalLabel">Sign up modal</h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6 log-in-modal">
+            <h4>
+              Create an account:
+
+            </h4>
+            <br/>
+              <%= form_for(:user, :url => registration_path(:user)) do |f| %>
+                
+                Email: 
+                <br/>
+                  <%= f.text_field :email %>
+                <br/>
+                <br/>
+                Password: <%= f.password_field :password %>
+                <br/>
+                <br/>
+
+                Password Confirmation: <%= f.password_field :password_confirmation %>
+
+                <br/>
+                <br/>
+                <%= f.submit 'Create Account' %>
+                <br/>
+              <% end %>
+          </div>
+
+          <div class="col-md-6">
+            <h4>
+              Or... even easier, login with 
+            </h4>
+
+            <div class="text-align-center">    
+
+            <div class="vertical-center"> 
+            <button class="btn btn-primary btn-large" onclick="location.href='/auth/facebook'">
+              <h4>  
+                <span class="fa fa-facebook"></span>
+                facebook
+              </h4>          
+            </button>
+            <br/>
+            <br/>
+              <button class="btn btn-primary btn-large" onclick="location.href='/auth/facebook'">
+              <h4>  
+                <span class="fa fa-google-plus"></span>
+                google
+              </h4>          
+            </button>
+          </div>
+        </div>
+          
+
+          </div>
+
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      	
+
+

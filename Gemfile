@@ -23,10 +23,22 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
+
+  # Bootstrap
+  gem 'bootstrap-sass', '~> 3.1.0'
+
   gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
+
+# User registration
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+
+# For facebook access - certificate
+gem 'certified'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
