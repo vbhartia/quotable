@@ -1,0 +1,57 @@
+<style>
+
+.margin-top-5 {
+  margin-top: 100px;
+}
+
+</style>
+
+
+<div class="navbar-wrapper">
+  <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Quotable.guru</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      </div>
+
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right margin-right">
+          <ul class="navbar-nav navbar-right">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle margin-right" data-toggle="dropdown">
+
+                  <%= current_user.full_name %> &nbsp
+
+                  <%=image_tag current_user.profile_pic_url, size: "50x50"%>
+
+                  <b class="caret"></b>
+              </a>
+
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="/u/<%=current_user.username %>/settings">
+                    Profile Settings
+                  </a>
+                </li>
+                <li>
+                  <a href="/users/sign_out">
+                    Log Out
+                  </a>
+                </li>              
+              </ul>
+            </li>
+          </ul>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<!--#email setting notifications -->
+
+<%= @notification_settings.daily_email %>
+
+<%= form_for @notification_settings, remote: true, url: notification_settings_update_path do |f| %>
+  <%= f.label 'Daily Email' %>:
+  <%= f.check_box :daily_email %><br />
+<% end %>
+
+
+<script>
+
+jQuery.fn.submitOnCheck = function() {
+  this.find('input[type=submit]').remove();
+  this.find('input[type=checkbox]').click(function() {
+    $(this).parent('form').submit();
+  });
+  return this;
+}
+
+	$('#edit_notification_setting_<%= @notification_settings.id %>').submitOnCheck()
+
+
+
+</script>

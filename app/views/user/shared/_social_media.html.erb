@@ -1,0 +1,12 @@
+<!--social media page -->
+
+<% current_user.authentications.each do |authentication| %>
+	
+	<br/>
+	<%= authentication.provider %>
+	<br/>
+	<%= image_tag authentication.profile_pic_url_from_provider %>
+
+<% end %>
+
+

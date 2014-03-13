@@ -1,0 +1,55 @@
+<!-- user profile homepage management -->
+
+<div class="container">
+
+  <h2>
+    <%= current_user.full_name %>'s Settings
+
+  </h2>
+
+  <br/>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+  <li class="active">
+  	<a href="#profile_home" data-toggle="tab">
+
+  		<%= current_user.full_name %>
+
+  	</a>
+
+  </li>
+
+  <li>
+  	<a href="#notifications" data-toggle="tab">
+  		Notification Settings
+  	</a>
+  </li>
+  
+  <li>
+  	<a href="#social_media" data-toggle="tab">Social Media</a>
+  </li>
+  
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="profile_home">
+
+  	<%= render "user/shared/main_profile_info" %>
+
+  </div>
+  <div class="tab-pane" id="notifications">
+
+	<%= render "user/shared/notification_settings" %>
+
+  </div>
+
+  <div class="tab-pane" id="social_media">
+
+	<%= render "user/shared/social_media" %>
+
+  </div>
+
+</div>
+</div>

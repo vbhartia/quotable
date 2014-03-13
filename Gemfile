@@ -36,6 +36,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'omniauth-linkedin'
 
 # For facebook access - certificate
 gem 'certified'
