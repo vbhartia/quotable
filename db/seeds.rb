@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+quote_list = [
+  ["abc", "Varun Bhartia"]
+]
+
+
+quote_list.each do |quote, author|
+  Quote.create( quote_text: quote, author: author )
+end
