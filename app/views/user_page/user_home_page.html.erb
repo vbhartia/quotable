@@ -1,0 +1,51 @@
+
+<div class="page-header">
+	<h3>
+		<%= image_tag @user_to_render.set_profile_pic_url %>
+
+		<%= @user_to_render.full_name %>'s Quotes
+	</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-8 .col-md-push-4">
+  	<%= @ary_quotes[0] %>
+	<%= @ary_quotes[1] %>
+
+	<div class="panel panel-default">
+  		<div class="panel-heading">
+	    	<h3 class="panel-title">
+	    		<%= @ary_quotes[0][:text] %>
+	    	</h3>
+
+	    	<div class="pull-right">
+	    		<%= @ary_quotes[0][:author] %>
+    		</div>
+  		
+  		</div>
+  		
+  		<div class="panel-body">
+    			<%= @ary_quotes[0][:text] %>
+  		</div>
+	</div>
+
+	
+
+
+
+  </div>
+
+  <div class="col-md-4 .col-md-pull-8">
+	<div class="list-group">
+	  
+	  <a href="#" class="list-group-item">
+	    <h4 class="list-group-item-heading">
+	    	Quote Catogeries
+	    </h4>
+	    <p class="list-group-item-text">
+	    	asdkfjsad fadsk jflkdsaj flsd
+	    </p>
+	  </a>
+	</div>
+  </div>
+</div>

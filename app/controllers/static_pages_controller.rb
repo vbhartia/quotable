@@ -8,6 +8,9 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def payroll_history_test
+  end
+
   def resource_name
     :user
   end

@@ -7,6 +7,9 @@ Quotable::Application.routes.draw do
   #********** Static Pages ************#
   root :to => "static_pages#homepage"
 
+  get '/payroll_history' => 'static_pages#payroll_history_test'
+
+
   #********** OAuth Login *************#
   get '/auth/:provider/callback' => 'user#oauth_create'
 
@@ -14,9 +17,9 @@ Quotable::Application.routes.draw do
 
   #********** Load Settings Page ********#
   get '/u/:user_name/settings' => 'user#user_setting_page'
-
   put '/u/:user_name/settings/notification_settings' => 'user#notification_settings_update', as: 'notification_settings_update'
 
-
+  #********** User Home Page ********#
+  get 'u/:username' => 'user_page#user_home_page'
 
 end

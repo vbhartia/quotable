@@ -1,0 +1,22 @@
+
+
+
+<div class='row'>
+    <div class="col-lg-10">
+
+	<%=
+		options = { extra_day_classes: lambda { |classes, date|
+  				classes << 'cal-day-daylight' if (5 == date.day)  
+  				classes << 'cal-day-night' if (10 == date.day)
+  						}
+					}
+
+		 bootstrap_calendar Date.today, options do |date|    		
+    		date.day.to_s
+
+		end
+
+		 %>
+
+	</div>
+</div>

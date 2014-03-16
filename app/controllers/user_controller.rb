@@ -1,3 +1,5 @@
+# User Authentication and Settings
+
 class UserController < ApplicationController
 
 	# OAuth Vertification Settings
@@ -47,7 +49,6 @@ class UserController < ApplicationController
 	def user_setting_page
 		@notification_settings = current_user.notification_setting
 
-
 	end
 
 	def notification_settings_update
@@ -69,17 +70,6 @@ class UserController < ApplicationController
 
 
 
-
-	def populate_friends
-		current_user.facebook.get_connections("me", "friends?fields=id,name,picture.type(normal)").each { |friend|
-			individual_friend = FriendList.new
-			individual_friend.first_name = friend['name']
-			individual_friend.facebook_id = friend['id']
-			individual_friend.profile_pic_url = friend['picture']['data']['url']
-			individual_friend.user = current_user
-			individual_friend.save!
-		}
-	end
 
 
 
