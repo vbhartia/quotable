@@ -9,29 +9,13 @@
 
 <div class="row">
   <div class="col-md-8 .col-md-push-4">
-  	<%= @ary_quotes[0] %>
-	<%= @ary_quotes[1] %>
-
-	<div class="panel panel-default">
-  		<div class="panel-heading">
-	    	<h3 class="panel-title">
-	    		<%= @ary_quotes[0][:text] %>
-	    	</h3>
-
-	    	<div class="pull-right">
-	    		<%= @ary_quotes[0][:author] %>
-    		</div>
-  		
-  		</div>
-  		
-  		<div class="panel-body">
-    			<%= @ary_quotes[0][:text] %>
-  		</div>
-	</div>
-
+  	<% @quote_to_render = @ary_quotes[0] %>
 	
+	<%= render "quotes/shared/individual_quote" %>
 
+	<% @quote_to_render = @ary_quotes[1] %>
 
+	<%= render "quotes/shared/individual_quote" %>
 
   </div>
 

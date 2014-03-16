@@ -22,4 +22,7 @@ Quotable::Application.routes.draw do
   #********** User Home Page ********#
   get 'u/:username' => 'user_page#user_home_page'
 
+  #********** User Home Page ********#
+  get 'q/:quote_slug' => 'quotes#quote_page'  
+
 end

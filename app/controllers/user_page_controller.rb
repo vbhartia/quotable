@@ -10,16 +10,14 @@ class UserPageController < ApplicationController
 
 
 		quote = Hash.new
-		quote[:text] = 'abc'
-		quote[:author] = 'xyz'
+		quote[:text] = 'Shadows and dust maximus, shadows and dust'
+		quote[:author] = 'Proximo'
 
 		quote1 = Hash.new
-		quote1[:text] = 'abc'
-		quote1[:author] = 'xyz'
+		quote1[:text] = 'Single Column, Single Column, Diamond'
+		quote1[:author] = 'Gladiator'
 
 		@ary_quotes = [quote, quote1]
-
-		
 
 
 	end
