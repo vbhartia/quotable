@@ -20,9 +20,15 @@ Quotable::Application.routes.draw do
   put '/u/:user_name/settings/notification_settings' => 'user#notification_settings_update', as: 'notification_settings_update'
 
   #********** User Home Page ********#
-  get 'u/:username' => 'user_page#user_home_page'
+  get 'u/:username' => 'user_page#user_home_page', as: 'user_homepage'
 
-  #********** User Home Page ********#
-  get 'q/:quote_slug' => 'quotes#quote_page'  
+  #********** Quotes ********#
+  get 'q/:quote_slug' => 'quotes#quote_page', as: 'quote_individual'  
+
+  #********** Author ********#
+  get 'a/:author_slug' => 'authors#author_page', as: 'author_page'  
+
+  #********** Tags ********#
+  get 't/:tag' => 'tags#tag_page', as: 'tag_page'  
 
 end

@@ -11,26 +11,42 @@
     			<%= @quote_to_render[:text] %>
           <br/>
 
-          <%= @quote_to_render[:author] %>
+          <%= link_to @quote_to_render[:author], author_page_path(@quote_to_render[:author])  %>
 
           <hr/>
 
           <div class="row">
-          Tags:
-              List of tags
+            <div class="col-md-6">
 
-          Favorite:
+              Tags:   
 
+              <% @quote_to_render[:tags].each do |tag| %>
+
+                <span class="badge"><%= link_to tag, tag_page_path(tag) %></span>
+
+              <% end %>
+
+            </div>
+            <div class="col-md-6">
+
+              Favorite:
+            </div>
+
+            <hr/> 
           </div>
-
 
           <div class="row">
+            <div class="col-md-12">
+
             Share:
-              Copy URL
-              Post to Facebook
-              Post to Linkedin
-              Post to Twitter
+              Copy URL <%= quote_individual_path('abc') %>
+              Facebook
+              Linkedin
+              Twitter
+              Email
+
+            </div> 
           </div>
 
-  		</div>
+      </div>
 	</div>

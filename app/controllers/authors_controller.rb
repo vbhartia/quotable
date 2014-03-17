@@ -1,13 +1,9 @@
-class UserPageController < ApplicationController
+class AuthorsController < ApplicationController
+	def author_page
 
+		@author_to_render = Hash.new
 
-	def user_home_page
-
-		puts '********************************'			
-		puts params[:username]
-
-		@user_to_render = User.first
-
+		@author_to_render[:full_name] = 'Gladiator'
 
 		quote = Hash.new
 		quote[:text] = 'Shadows and dust maximus, shadows and dust'
@@ -21,7 +17,7 @@ class UserPageController < ApplicationController
 
 		@ary_quotes = [quote, quote1]
 
-		@followers = User.all
+
 
 	end
 

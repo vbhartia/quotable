@@ -1,48 +1,33 @@
 
 <div class="page-header">
 	<h3>
-		<%= image_tag @user_to_render.set_profile_pic_url %>
-
-		<%= @user_to_render.full_name %>'s Quotes
+		<%= @author_to_render[:full_name] %>'s Quotes
 	</h3>
 </div>
 
-
-
 <div class="row">
 
-<!-- Favorited Quotes -->
+<!-- Most Popular Quotes -->
   <div class="col-md-8 .col-md-push-4">
-  	
   	<% @ary_quotes.each do |quotes| %>
 
 	  	<% @quote_to_render = quotes %>
 	
 		<%= render "quotes/shared/individual_quote" %>
 	<% end %>
-
+  	
   </div>
 
-
-<!-- Right Panel -->
+  <!-- Right Panel -->
   <div class="col-md-4 .col-md-pull-8">
-
   	<div class="panel panel-default">
 		<div class="panel-body">
 			Follow Button
 		</div>
 	</div>
 
-  	<!-- Tag Cloud -->
-	<div class="panel panel-default">
-		<div class="panel-body">
-			Tag Cloud
-		</div>
-	</div>
-
-
-	<%= render "user_page/shared/followers" %>
-
-
   </div>
+
+
+
 </div>

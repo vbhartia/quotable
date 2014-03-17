@@ -1,0 +1,43 @@
+<button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#FollowersModal">
+	Followers (<%= @followers.count %>)
+</button>
+
+<div class="modal fade" id="FollowersModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+        <h4 class="modal-title" id="myModalLabel"> 
+        	<%= @user_to_render.full_name %>'s Followers
+
+        </h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+        	<table>
+    			<% @followers.each do |follower_user| %>
+	    			<tr>
+						<%= image_tag follower_user.set_profile_pic_url %>
+	        			<%= link_to follower_user.full_name, user_homepage_path(follower_user.username) %>
+
+	        			Follow?
+
+        			</tr>
+    			<% end %>
+			</table>
+
+
+
+
+    	</div>
+	  </div>	
+          
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

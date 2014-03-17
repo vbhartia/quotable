@@ -1,13 +1,6 @@
-class UserPageController < ApplicationController
+class TagsController < ApplicationController
 
-
-	def user_home_page
-
-		puts '********************************'			
-		puts params[:username]
-
-		@user_to_render = User.first
-
+	def tag_page
 
 		quote = Hash.new
 		quote[:text] = 'Shadows and dust maximus, shadows and dust'
@@ -19,9 +12,10 @@ class UserPageController < ApplicationController
 		quote1[:author] = 'Gladiator'
 		quote1[:tags] = ['Inspirational', 'Gladiator']
 
+
+
 		@ary_quotes = [quote, quote1]
 
-		@followers = User.all
 
 	end
 
