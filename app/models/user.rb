@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
 
   has_many :authentications
   has_one :notification_setting
+
+  has_many :user_associated_quotes
+  has_many :quotes, :through=> :user_associated_quotes
   
 
   def full_name
@@ -18,7 +21,7 @@ class User < ActiveRecord::Base
   end
 
   def profile_pic_url
-  	authentications.first.profile_pic_url_from_provider
+    'abc'
   end
 
   def apply_omniauth(omniauth)

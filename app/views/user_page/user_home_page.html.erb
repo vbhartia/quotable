@@ -14,9 +14,9 @@
 <!-- Favorited Quotes -->
   <div class="col-md-8 .col-md-push-4">
   	
-  	<% @ary_quotes.each do |quotes| %>
+  	<% @quotes_to_render.each do |quote| %>
 
-	  	<% @quote_to_render = quotes %>
+	  	<% @quote_to_render = quote %>
 	
 		<%= render "quotes/shared/individual_quote" %>
 	<% end %>

@@ -9,11 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :username,           :null => false, :default => ""
 
       t.string :set_profile_pic_url
-      
-
       t.string :encrypted_password, :null => false, :default => ""
-
-
 
       ## Recoverable
       t.string   :reset_password_token
