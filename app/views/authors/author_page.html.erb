@@ -1,7 +1,7 @@
 
 <div class="page-header">
 	<h3>
-		<%= @author_to_render[:full_name] %>'s Quotes
+		<%= @author_to_render %>'s Quotes
 	</h3>
 </div>
 
@@ -9,9 +9,9 @@
 
 <!-- Most Popular Quotes -->
   <div class="col-md-8 .col-md-push-4">
-  	<% @ary_quotes.each do |quotes| %>
+  	<% @quotes_author_to_render.each do |quote| %>
 
-	  	<% @quote_to_render = quotes %>
+	  	<% @quote_to_render = quote %>
 	
 		<%= render "quotes/shared/individual_quote" %>
 	<% end %>
