@@ -26,9 +26,11 @@ Quotable::Application.routes.draw do
   get 'q/:quote_slug' => 'quotes#quote_page', as: 'quote_individual'  
 
   #********** Author ********#
-  get 'a/:author_slug' => 'authors#author_page', as: 'author_page'  
+  get 'a/:author_slug' => 'authors#author_page', as: 'author_page'
+  get 'a/' => 'authors#all_authors', as: 'all_authors_home'
 
   #********** Tags ********#
   get 't/:tag' => 'tags#tag_page', as: 'tag_page'  
+  get 't/' => 'tags#all_tags', as: 'all_tags_home'  
 
 end

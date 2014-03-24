@@ -1352,7 +1352,7 @@ quote_list = [
 
 ]
 
-
 quote_list.each do |quote, author|
   Quote.create( quote_text: quote, author: author )
 end
+

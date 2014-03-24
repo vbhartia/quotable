@@ -7,4 +7,16 @@ class AuthorsController < ApplicationController
 
 	end
 
+	def all_authors
+
+		@authors = Array.new
+
+		Quote.all.each do |quote|
+			@authors << quote.author
+		end
+
+		@authors = @authors.uniq
+
+	end
+
 end

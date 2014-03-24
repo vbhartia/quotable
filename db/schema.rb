@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140324005524) do
+ActiveRecord::Schema.define(:version => 20140324030626) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -30,16 +30,25 @@ ActiveRecord::Schema.define(:version => 20140324005524) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "quote_tags", :force => true do |t|
-    t.integer "quote_id"
-    t.text    "tag_title"
-  end
-
   create_table "quotes", :force => true do |t|
     t.text     "quote_text"
     t.text     "author"
+    t.text     "url_slug"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "tag_associated_quotes", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "quote_id"
+    t.datetime "assign_date"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "tags", :force => true do |t|
+    t.text "tag_title"
+    t.text "url_slug"
   end
 
   create_table "user_associated_quotes", :force => true do |t|

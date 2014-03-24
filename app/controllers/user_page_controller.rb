@@ -11,18 +11,7 @@ class UserPageController < ApplicationController
 
 		@quotes_to_render = @user_to_render.quotes
 
-
-		quote = Hash.new
-		quote[:text] = 'Shadows and dust maximus, shadows and dust'
-		quote[:author] = 'Proximo'
-		quote[:tags] = ['Inspirational', 'Gladiator']
-
-		quote1 = Hash.new
-		quote1[:text] = 'Single Column, Single Column, Diamond'
-		quote1[:author] = 'Gladiator'
-		quote1[:tags] = ['Inspirational', 'Gladiator']
-
-		@ary_quotes = [quote, quote1]
+		puts @quotes_to_render.length
 
 		@followers = User.all
 

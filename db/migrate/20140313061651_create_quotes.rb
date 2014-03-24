@@ -3,6 +3,7 @@ class CreateQuotes < ActiveRecord::Migration
   	create_table :quotes do |t|
 		t.text :quote_text
 		t.text :author
+		t.text :url_slug
 
 		t.timestamps
 	end

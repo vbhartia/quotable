@@ -1,1 +1,33 @@
-Test
+
+<div class="page-header">
+	<h3>
+		<%= @tag_to_render.tag_title %>'s Quotes
+	</h3>
+</div>
+
+<div class="row">
+
+<!-- Most Popular Quotes -->
+  <div class="col-md-8 .col-md-push-4">
+  	<% @quotes_tag_to_render.each do |quote| %>
+
+	  	<% @quote_to_render = quote %>
+	
+		<%= render "quotes/shared/individual_quote" %>
+	<% end %>
+  	
+  </div>
+
+  <!-- Right Panel -->
+  <div class="col-md-4 .col-md-pull-8">
+  	<div class="panel panel-default">
+		<div class="panel-body">
+			Follow Button
+		</div>
+	</div>
+
+  </div>
+
+
+
+</div>

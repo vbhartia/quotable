@@ -1,0 +1,10 @@
+Discover Quotes from the following authors
+
+<br/>
+
+
+<% @authors.each do |author| %>
+
+	<%= link_to author, author_page_path(author) %> <br/>
+
+<% end %> 

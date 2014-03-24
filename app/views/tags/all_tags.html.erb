@@ -1,0 +1,10 @@
+Discover Quotes from the following authors
+
+<br/>
+
+
+<% @all_tags.each do |tag| %>
+
+	<%= link_to tag.tag_title, tag_page_path(tag.url_slug) %> <br/>
+
+<% end %> 

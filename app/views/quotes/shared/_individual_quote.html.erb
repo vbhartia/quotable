@@ -2,16 +2,16 @@
   <div class="panel panel-default">
   		<div class="panel-heading">
 	    	<h3 class="panel-title">
-	    		<%= @quote_to_render[:quote_text] %>
+	    		<%= @quote_to_render.quote_text %>
 	    	</h3>
   		
   		</div>
   		
   		<div class="panel-body">
-    			<%= @quote_to_render[:quote_text] %>
+    			<%= @quote_to_render.quote_text %>
           <br/>
 
-          <%= link_to @quote_to_render[:author], author_page_path(@quote_to_render[:author])  %>
+          <%= link_to @quote_to_render.author, author_page_path(@quote_to_render.author)  %>
 
           <hr/>
 
@@ -19,6 +19,14 @@
             <div class="col-md-6">
 
               Tags:   
+
+              <% @quote_to_render.tags.each do |tag| %>
+
+                <%= link_to tag.tag_title, tag_page_path(tag.url_slug) %>
+
+              <% end %>
+
+
 
             </div>
             <div class="col-md-6">
@@ -33,7 +41,7 @@
             <div class="col-md-12">
 
             Share:
-              Copy URL <%= quote_individual_path('abc') %>
+              Copy URL <%= link_to 'Quote Link', quote_individual_path(@quote_to_render.url_slug) %>
               Facebook
               Linkedin
               Twitter

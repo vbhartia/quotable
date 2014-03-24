@@ -2,20 +2,15 @@ class TagsController < ApplicationController
 
 	def tag_page
 
-		quote = Hash.new
-		quote[:text] = 'Shadows and dust maximus, shadows and dust'
-		quote[:author] = 'Proximo'
-		quote[:tags] = ['Inspirational', 'Gladiator']
+		@tag_to_render = Tag.where(:url_slug => params[:tag]).first
 
-		quote1 = Hash.new
-		quote1[:text] = 'Single Column, Single Column, Diamond'
-		quote1[:author] = 'Gladiator'
-		quote1[:tags] = ['Inspirational', 'Gladiator']
+		@quotes_tag_to_render = @tag_to_render.quotes		
 
+	end
 
+	def all_tags
 
-		@ary_quotes = [quote, quote1]
-
+		@all_tags = Tag.all
 
 	end
 
