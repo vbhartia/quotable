@@ -40,16 +40,21 @@ Tags_To_Create = [
 	"Actor"
 ]
 
-Sports_Quotes = [
+tags = Hash.new { |h, k| h[k] = Array.new }
+
+tags[:Sports] = Array.new
+
+tags[:Sports] = [
 	"Michael Jordan",
 	"Lance Armstrong",
 	"Vince Lombardi",
 	"Muhammad Ali",
 	"LeBron James",
-
 ]
 
-Politics_Quotes = [
+tags[:Politics] = Array.new
+
+tags[:Politics] = [
 	"Abraham Lincoln",
 	"Dalai Lama",
 	"Marcus Aurelius",
@@ -60,11 +65,12 @@ Politics_Quotes = [
 	"Robert Kennedy",
 	"Rose Kennedy",
 	"Nelson Mandela",
-	"George S. Patton",
-
+	"George S. Patton"
 ]
 
-Business_Quotes = [
+tags[:Business] = Array.new
+
+tags[:Business] = [
 	"Bill Gates",
 	"Michael Jordan",
 	"Thomas A. Edison",
@@ -75,22 +81,31 @@ Business_Quotes = [
 	"Karl Marx",
 ]
 
-Religous_Quotes = [
+tags[:Religous] = Array.new
+
+tags[:Religous] = [
 	"Dalai Lama",
 	"Sai Baba",
 	"Billy Graham",
 	"Pope John XXIII", 
 ]
 
-Scientists_Quotes = [
-	"Stephen Hawking",
+tags[:Scientists] = Array.new
+
+tags[:Scientists] = [
+	"Stephen Hawking", 
 ]
 
-Singer_Quotes = [
-	"Michael Jackson",
+
+tags[:Singer] = Array.new
+
+tags[:Singer] = [
+	"Michael Jackson", 
 ]
 
-Presidents_Quotes = [
+tags[:Presidents] = Array.new
+
+tags[:Presidents] = [
 	"Lyndon B. Johnson",
 	"John F. Kennedy",
 	"Abraham Lincoln",
@@ -103,67 +118,37 @@ Presidents_Quotes = [
 	"Margaret Thatcher"
 ]
 
-Actors_Quotes = [
+
+tags[:Actors] = Array.new
+
+tags[:Actors] = [
 	"Chuck Norris",
 	"Will Smith",
 	"Charlie Sheen"
 ]
 
-Comedian_Quotes = [
+
+tags[:Comedian] = Array.new
+
+tags[:Comedian] = [
 	"Conan O'Brien"
 ]
- 
 
 
-Tags_To_Create.each do |tag_title|
-	t = Tag.new(:tag_title => tag_title, :url_slug => to_slug(tag_title))
-	t.save!
-end
 
-# Add a spors tag
-ts = Tag.where(:tag_title => "Sports").first
+tags.keys.each do |key|
 
-Sports_Quotes.each do |sports_categorty|
+	puts tag_category = tags[key]
 
-	q = Quote.where(:author => sports_categorty)
-	q.each do |quote|
-		quote.tags << ts
+	#Generate Tag 
+
+	t = Tag.new(:tag_title => key.to_s, :url_slug => to_slug(key.to_s))
+
+	tags[key].each do |author|
+
+		q = Quote.where(:author => author)
+		q.each do |quote|
+			quote.tags << t
+		end
 	end
-
-end
-
-# Add a Politics tag
-tp = Tag.where(:tag_title => "Politics").first
-
-Politics_Quotes.each do |politics_categorty|
-
-	q = Quote.where(:author => politics_categorty)
-	q.each do |quote|
-		quote.tags << tp
-	end
-
-end
-
-# Add a Business tag
-tb = Tag.where(:tag_title => "Business").first
-
-Business_Quotes.each do |business_categorty|
-
-	q = Quote.where(:author => business_categorty)
-	q.each do |quote|
-		quote.tags << tb
-	end
-
-end
-
-# Add a Religous tag
-tr = Tag.where(:tag_title => "Religous").first
-
-Religous_Quotes.each do |religous_categorty|
-
-	q = Quote.where(:author => religous_categorty)
-	q.each do |quote|
-		quote.tags << tr
-	end
-
 end
