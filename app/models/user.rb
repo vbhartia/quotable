@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
 
   has_many :user_associated_quotes
   has_many :quotes, :through=> :user_associated_quotes
+
+  has_many :followerships
+  has_many :followers, :through => :followerships
   
 
   def full_name
