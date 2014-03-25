@@ -138,4 +138,4 @@ end
 
 puts write_to_file
 
-File.open('abc.txt', 'w') { |file| file.write(write_to_file) }
+File.open('scrapped_quotes.txt', 'w') { |file| file.write(write_to_file) }

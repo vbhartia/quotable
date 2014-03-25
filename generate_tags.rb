@@ -50,6 +50,7 @@ tags[:Sports] = [
 	"Vince Lombardi",
 	"Muhammad Ali",
 	"LeBron James",
+	"Yogi Berra"
 ]
 
 tags[:Politics] = Array.new
@@ -93,7 +94,8 @@ tags[:Religous] = [
 tags[:Scientists] = Array.new
 
 tags[:Scientists] = [
-	"Stephen Hawking", 
+	"Stephen Hawking",
+	"Carl Sagan", 
 ]
 
 
