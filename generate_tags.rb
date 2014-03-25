@@ -35,14 +35,18 @@ Tags_To_Create = [
 	"Business",
 	"Religous",
 	"Singer",
-	"Rapper"
+	"Rapper",
+	"Comedian",
+	"Actor"
 ]
 
 Sports_Quotes = [
 	"Michael Jordan",
 	"Lance Armstrong",
 	"Vince Lombardi",
-	"Muhammad Ali"
+	"Muhammad Ali",
+	"LeBron James",
+
 ]
 
 Politics_Quotes = [
@@ -51,7 +55,13 @@ Politics_Quotes = [
 	"Marcus Aurelius",
 	"Winston Churchill",
 	"Napoleon Bonaparte",
-	"Mahatma Gandhi"
+	"Mahatma Gandhi",
+	"Indira Gandhi",
+	"Robert Kennedy",
+	"Rose Kennedy",
+	"Nelson Mandela",
+	"George S. Patton",
+
 ]
 
 Business_Quotes = [
@@ -61,13 +71,48 @@ Business_Quotes = [
 	"Warren Buffett",
 	"Steve Jobs",
 	"Walt Disney",
-	"Henry Ford"
+	"Henry Ford",
+	"Karl Marx",
 ]
 
 Religous_Quotes = [
 	"Dalai Lama",
-	"Sai Baba"
+	"Sai Baba",
+	"Billy Graham",
+	"Pope John XXIII", 
 ]
+
+Scientists_Quotes = [
+	"Stephen Hawking",
+]
+
+Singer_Quotes = [
+	"Michael Jackson",
+]
+
+Presidents_Quotes = [
+	"Lyndon B. Johnson",
+	"John F. Kennedy",
+	"Abraham Lincoln",
+	"Nelson Mandela",
+	"Richard M. Nixon",
+	"Barack Obama",
+	"Ronald Reagan",
+	"Franklin D. Roosevelt",
+	"Theodore Roosevelt",
+	"Margaret Thatcher"
+]
+
+Actors_Quotes = [
+	"Chuck Norris",
+	"Will Smith",
+	"Charlie Sheen"
+]
+
+Comedian_Quotes = [
+	"Conan O'Brien"
+]
+ 
 
 
 Tags_To_Create.each do |tag_title|
