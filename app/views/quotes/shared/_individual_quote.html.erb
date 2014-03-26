@@ -25,9 +25,6 @@
                 <%= link_to tag.tag_title, tag_page_path(tag.url_slug) %>
 
               <% end %>
-
-
-
             </div>
             <div class="col-md-6">
 
@@ -42,6 +39,17 @@
                 0
 
               <% end %>
+
+              <%= form_tag(add_vote_path, method: "post") do %>
+                <%= hidden_field_tag(:quote_id, @quote_to_render.id) %>
+
+                <%= submit_tag('Vote Up') %>
+
+                  <span class="glyphicon glyphicon-arrow-up"> </span>
+
+              <% end %>
+
+
                 
                 
             </div>

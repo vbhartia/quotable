@@ -35,4 +35,8 @@ Quotable::Application.routes.draw do
   get 't/:tag' => 'tags#tag_page', as: 'tag_page'  
   get 't/' => 'tags#all_tags', as: 'all_tags_home'  
 
+  #********** Votes ********#
+  post 'votes/add_votes' => 'votes#add_vote', as: 'add_vote'  
+
+
 end
