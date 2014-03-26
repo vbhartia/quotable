@@ -31,7 +31,19 @@
             </div>
             <div class="col-md-6">
 
-              Favorite:
+              Votes:
+
+              <%if @quote_to_render.votes.count != 0 %>
+
+              <a data-target="#<%= @quote_to_render.url_slug %>" data-toggle="modal"> <%= @quote_to_render.votes.count %> </a>
+              
+              <% else %>
+
+                0
+
+              <% end %>
+                
+                
             </div>
 
             <hr/> 
@@ -52,3 +64,36 @@
 
       </div>
 	</div>
+
+
+<div class="modal fade" id="<%= @quote_to_render.url_slug %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+        <h4 class="modal-title" id="myModalLabel"> 
+          <%= @quote_to_render.quote_text %> Votes
+
+        </h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="row">
+          <table>
+          <% @quote_to_render.votes.each do |vote| %>
+            <tr>
+            <%= image_tag vote.user.set_profile_pic_url %>
+                <%= link_to vote.user.full_name, user_homepage_path(vote.user.username) %>
+
+              </tr>
+          <% end %>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   has_many :followerships
   has_many :followers, :through => :followerships
   
+  has_many :votes
+
 
   def full_name
   	self.first_name + self.last_name
