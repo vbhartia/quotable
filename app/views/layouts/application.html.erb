@@ -2,23 +2,34 @@
 <html>
 <head>
   <title>Quotable</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-	<% if current_user %>
-		<%= render "layouts/shared/header_menu" %>
+	<% if @homepage %>
+		<%= yield %>
+
+	<% else %>
+		<div class = 'container'>
+			<div class = 'row'>
+
+				<% if current_user %>
+					<%= render "layouts/shared/header_menu" %>
+				<% end %>
+
+				<%= yield %>
+
+			</div>
+		</div>
 	<% end %>
 
-	<div class='container'>
-		<div class='row'>
 
-			<%= yield %>
 
-		</div>
-	</div>
+
+
+
 
 
 </body>

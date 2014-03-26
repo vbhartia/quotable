@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
   	#if user_signed_in?
   	#	redirect_to dashboard_path
   	#end
-  	@at_home_page = true
+  	@homepage = true
 
   end
 

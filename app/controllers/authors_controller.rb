@@ -3,7 +3,7 @@ class AuthorsController < ApplicationController
 
 		@quotes_author_to_render = Quote.where(:author => params[:author_slug])
 
-		@author_to_render = 'Michael Jordan'
+		@author_to_render = params[:author_slug]
 
 	end
 
