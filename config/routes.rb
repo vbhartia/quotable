@@ -24,6 +24,8 @@ Quotable::Application.routes.draw do
 
   #********** Quotes ********#
   get 'q/:quote_slug' => 'quotes#quote_page', as: 'quote_individual'  
+  get 'discover' => 'quotes#discover_page', as: 'discover_page'  
+
 
   #********** Author ********#
   get 'a/:author_slug' => 'authors#author_page', as: 'author_page'

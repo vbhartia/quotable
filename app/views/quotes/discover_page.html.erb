@@ -1,0 +1,94 @@
+<div class="page-header">
+	<h3>
+		Discover Quotes
+	</h3>
+</div>
+
+<div class="row">
+
+	<!-- Search by Author -->
+	<div class="col-md-6">
+
+		<h4>
+			By Author
+		</h4>
+
+		<hr/>
+
+			<div class="col-md-1">
+				<ul class="nav" data-spy="affix">
+					<% abc = ('A'..'Z') %>
+					<li><span>
+						Top
+					</li>
+
+					<% abc.each do |letter| %>
+						<li><span>
+							<%= link_to letter, '#'+letter %>
+							</span>
+						</li>
+					<% end %>
+
+				</ul>
+
+			</div>
+
+			<div class="col-md-offset-1 col-md-4">
+				
+				<% print = true; current_letter = 'A' %>
+
+				<% @authors.each_with_index do |author, index| %>
+
+					<% if print %>
+						<%= current_letter %>
+						<a name= <%= current_letter %>>
+						<br/>
+						<% print = false %>
+					<% end %>
+
+					<!-- get first character of last name -->
+
+					<% if author.split(" ").last[0] == current_letter  %>
+
+						<%= link_to author, author_page_path(author) %>
+					<% else %>
+						<%= current_letter = author.split(" ").last[0] %>
+						<a name= <%= current_letter %>>
+						<br/>
+						<%= link_to author, author_page_path(author) %>
+					<% end %>
+
+					<br/>
+
+				<% end %>
+
+
+			</div>
+		
+
+	</div>
+
+	<!-- By Tag -->
+
+	<div class="col-md-4">
+
+		<h4>
+			By Tag
+		</h4>
+
+		<hr/>
+
+
+		<% @tags.each do |tag| %>
+
+			<%= link_to tag.tag_title, tag_page_path(tag.url_slug) %>
+			
+			<br/>
+
+		<% end %>
+
+	</div>
+
+
+	<!-- Most Popular -->
+

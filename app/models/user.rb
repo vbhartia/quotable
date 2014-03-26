@@ -20,11 +20,11 @@ class User < ActiveRecord::Base
   
 
   def full_name
-  	'Varun Bhartia'
+  	self.first_name + self.last_name
   end
 
   def profile_pic_url
-    'abc'
+    self.set_profile_pic_url
   end
 
   def apply_omniauth(omniauth)
