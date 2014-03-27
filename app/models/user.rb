@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
     if self.set_profile_pic_url != nil
       self.set_profile_pic_url
     else 
-      'abc'
+      'http://graph.facebook.com/10108184/picture?type=square'
     end
   end
 
