@@ -1,3 +1,12 @@
+<style>
+
+.q_modal {
+    height: 90%;
+    overflow: scroll;
+}
+
+</style>
+
 
   <div class="panel panel-default">
   		<div class="panel-heading">
@@ -88,7 +97,7 @@
       </div>
 
       <div class="modal-body">
-        <div class="row">
+        <div class="row q_modal">
           <table>
           <% @quote_to_render.votes.each do |vote| %>
             <tr>

@@ -26,7 +26,11 @@ class User < ActiveRecord::Base
   end
 
   def profile_pic_url
-    self.set_profile_pic_url
+    if self.set_profile_pic_url != nil
+      self.set_profile_pic_url
+    else 
+      'abc'
+    end
   end
 
   def apply_omniauth(omniauth)
