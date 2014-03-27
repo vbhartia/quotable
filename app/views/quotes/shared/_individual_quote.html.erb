@@ -40,7 +40,7 @@
 
               <% end %>
 
-              <%= form_tag(add_vote_path, method: "post") do %>
+              <%= form_tag(add_vote_path, remote: true, method: "post") do %>
                 <%= hidden_field_tag(:quote_id, @quote_to_render.id) %>
 
                 <%= submit_tag('Vote Up') %>
@@ -92,10 +92,21 @@
           <table>
           <% @quote_to_render.votes.each do |vote| %>
             <tr>
-            <%= image_tag vote.user.set_profile_pic_url %>
-                <%= link_to vote.user.full_name, user_homepage_path(vote.user.username) %>
+              <td>
+                <%= link_to user_homepage_path(vote.user.username) do %>
 
-              </tr>
+                 <%= image_tag vote.user.set_profile_pic_url %>
+                  &nbsp
+                 <%= vote.user.full_name %> 
+
+
+                 <% end %>
+
+                <br/>
+                <br/>
+              </td>
+
+            </tr>
           <% end %>
           </table>
 
