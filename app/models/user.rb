@@ -22,7 +22,11 @@ class User < ActiveRecord::Base
 
 
   def full_name
-  	self.first_name + self.last_name
+    if self.first_name != nil
+    	self.first_name + self.last_name
+    else
+      'Temp Name'
+    end
   end
 
   def profile_pic_url
