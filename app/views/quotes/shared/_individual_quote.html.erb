@@ -41,7 +41,7 @@
 
               <%if @quote_to_render.votes.count != 0 %>
 
-              <a data-target="#<%= @quote_to_render.url_slug %>" data-toggle="modal"> <%= @quote_to_render.votes.count %> </a>
+              <a data-target="#<%= @quote_to_render.id %>" data-toggle="modal"> <%= @quote_to_render.votes.count %> </a>
               
               <% else %>
 
@@ -74,10 +74,14 @@
 
           <div class="row">
             <div class="col-md-12">
+              <div id="fb-root"></div>
 
             Share:
               Copy URL <%= link_to 'Quote Link', quote_individual_path(@quote_to_render.url_slug) %>
-              Facebook
+                      <a onClick='facebook_wall_post<%= @quote_to_render.id %>()'>
+               
+            <span class="icon-facebook" title="Share on facebook">Facebook</span>
+        </a>
               Linkedin
               Twitter
               Email
@@ -87,6 +91,54 @@
 
       </div>
 	</div>
+
+
+    <script>
+      function facebook_wall_post<%= @quote_to_render.id %>()
+      {
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1471364669746168',
+          status     : true,
+          cookie      : false
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+
+    FB.ui(
+      {
+       method: 'feed',
+       name: '<%= j(@quote_to_render.author + ' ' + @quote_to_render.quote_text) %>',
+       caption: '<%= j(@quote_to_render.quote_text) %>',
+       description: (
+          '<%= j(@quote_to_render.quote_text) %>'
+       ),
+       link: '<%= 'http:\/\/www.quotable.guru/q/' + @quote_to_render.url_slug %>',
+       picture: 'http://www.fbrell.com/public/f8.jpg'
+      },
+      function(response) {
+        if (response && response.post_id) {
+          alert('Post was published.');
+        } else {
+          alert('Post was not published.');
+        }
+      }
+    );
+  }
+
+
+    </script>
+
+
+
 
 
 <div class="modal fade" id="<%= @quote_to_render.url_slug %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
