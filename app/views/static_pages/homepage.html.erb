@@ -111,7 +111,7 @@
           
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#Discover">Discover</a></li>
+            <li><a href="/discover">Discover</a></li>
             <li><a href="#Share">Share</a></li>
             <li><a href="#Personalize">Personalize</a></li>
             <li><a href="#Personalize">Inspiration</a></li>
@@ -121,7 +121,7 @@
             <% if user_signed_in? %>
 
               <li>
-                <button class="btn btn-primary navbar-btn" onclick="location.href='/home'">
+                <button class="btn btn-primary navbar-btn" onclick="location.href='/u/<%= current_user.username %>'">
                   My Quotes
                 </button>
               </li>

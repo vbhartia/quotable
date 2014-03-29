@@ -12,13 +12,14 @@
 		<%= yield %>
 
 	<% else %>
-		<div class = 'container'>
-			<div class = 'row'>
+
 
 				<% if current_user %>
 					<%= render "layouts/shared/header_menu" %>
 				<% end %>
 
+		<div class = 'container'>
+			<div class = 'row'>
 				<%= yield %>
 
 			</div>
