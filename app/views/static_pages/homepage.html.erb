@@ -157,7 +157,7 @@
 
               <% else %>
                 <li>
-                  <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#SignUpModal">Sign Up Test</button>
+                  <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#SignUpModal">Sign Up</button>
 
                   &nbsp                   &nbsp
       
@@ -178,10 +178,9 @@
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-<!--
+
         <li data-target="#myCarousel" data-slide-to="1" class=""></li>
         <li data-target="#myCarousel" data-slide-to="2" class=""></li>
--->
 
       </ol>
       <div class="carousel-inner">
@@ -204,34 +203,46 @@
             </div>
           </div>
         </div>
-<!--        
         <div class="item">
-
-
-
+          <%= image_tag "homepage/michael_jordan.jpeg", :class => "img-responsive" %>
           <div class="container">
             <div class="carousel-caption hidden-xs">
-              <h1>Keep a record of your workouts</h1>
-              <p>Easy workout tracker makes it easy to keep a record of your workouts and observe trends and get summary reports</p>
 
-            </div>
-          </div>
-        </div>
-        <div class="item">
+              <div style="background-color:rgba(0,0,0,0.7)">
+                <h2>
+                  I've failed over and over and over again in my life and that is why I succeed.
 
-
-
-          <div class="container">
-            <div class="carousel-caption hidden-xs">
-              <h1>Keep Yourself Motivated</h1>
-              <p>Share tips, workouts, and receive kudos from your friends!</p>
+                  ~ Michael Jordan
+                </h2>
 
             </div>
           </div>
         </div>
       </div>
 
-      -->
+
+      <div class="item">
+        <%= image_tag "homepage/steve-jobs.jpg", :class => "img-responsive" %>
+
+        <div class="container">
+          <div class="carousel-caption">
+            <div style="background-color:rgba(0,0,0,0.7); text-align:left">
+
+              <h4>
+                Remembering that I'll be dead soon is the most important tool I've ever encountered to help me make the big choices in life. Because almost everything - all external expectations, all pride, all fear of embarrassment or failure - these things just fall away in the face of death, leaving only what is truly important. 
+
+                <br/>
+
+                ~ Steve Jobs
+              </h4>
+            </div>  
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+
  
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
@@ -253,7 +264,7 @@
 
           <h2>Discover</h2>
 
-          <p>Search from over a 30 million quotes, curated by the community. </p>
+          <p> Search from over a 30 million quotes, curated by the community. </p>
 
         </div>
 
@@ -299,6 +310,8 @@
         Its super easy, simply create an account with your email or facebook and start recording!
       </h4>
 
+
+
       <div class="sign-up-feature">
         <center>
 
@@ -313,6 +326,7 @@
     </div>
 
     <div class="col-lg-offset-1 col-lg-1">
+            <a class="btn btn-large btn-primary" onclick="window.location='discover'">Discover Great Quotes</a>
 
     </div>
 
@@ -323,25 +337,23 @@
 <!-- Share -->
 <a name="Share"></a>
 <hr class="featurette-divider"> 
-<div class="container margin-thanks">
-  <h1>
-    <span class="glyphicon glyphicon-thumbs-up"></span>
-      &nbsp
-      &nbsp
-      Share Meaningful Quotes!
-  </h1>
+<div class="container">
+
 
   <div class="row">
     <div class="col-lg-4">
-      <br/>
-
+      <h4>
+        Attach meaningful quotes to friends quotes wall. Also post quotes directly to Facebook, Twitter, etc.
+      </h4>
 
     </div>
     <div class="col-lg-offset-2 col-lg-6">
-      <div class="sign-up-feature">
-        <h3>
-          We'd love to hear from you and what we should add. Please let us know! <a href="mailto:varun.bhartia@gmail.com">Give us feedback</a>
-        </h3>
+      <div class="">
+        <h1>
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+
+          Share Meaningful Quotes!
+        </h1> 
       </div>
     </div>
   </div>
@@ -368,7 +380,7 @@
     <div class="col-lg-offset-2 col-lg-6">
       <div class="sign-up-feature">
         <h3>
-          We'd love to hear from you and what we should add. Please let us know! <a href="mailto:varun.bhartia@gmail.com">Give us feedback</a>
+   
         </h3>
       </div>
     </div>
@@ -377,7 +389,13 @@
 
 <!-- Footer -->
 
-
+<div class='row'>
+  <div class='container'>
+      <h4>
+            We'd love to hear from you and what we should add. Please let us know! <a href="mailto:varun.bhartia@gmail.com">Give us feedback</a>
+      </h4>
+  </div>
+</div>
 
 
 
@@ -426,23 +444,9 @@
 
             <div class="text-align-center">    
 
-            <div class="vertical-center"> 
-            <button class="btn btn-primary btn-large" onclick="location.href='/auth/facebook'">
-              <h4>  
-                <span class="fa fa-facebook"></span>
-                facebook
-              </h4>          
-            </button>
-            <br/>
-            <br/>
-              <button class="btn btn-primary btn-large" onclick="location.href='/auth/facebook'">
-              <h4>  
-                <span class="fa fa-google-plus"></span>
-                google
-              </h4>          
-            </button>
-          </div>
-        </div>
+              <%=  render 'static_pages/shared/social_login' %>
+            
+            </div>
           
 
           </div>
@@ -469,68 +473,34 @@
 
       <div class="modal-body">
         <div class="row">
-          <div class="col-md-6 log-in-modal">
-            <h4>
-              Create an account:
-
-            </h4>
-            <br/>
-              <%= form_for(:user, :url => registration_path(:user)) do |f| %>
-                
-                Email: 
-                <br/>
-                  <%= f.text_field :email %>
-                <br/>
-                <br/>
-                Password: <%= f.password_field :password %>
-                <br/>
-                <br/>
-
-                Password Confirmation: <%= f.password_field :password_confirmation %>
-
-                <br/>
-                <br/>
-                <%= f.submit 'Create Account' %>
-                <br/>
-              <% end %>
-          </div>
-
-          <div class="col-md-6">
-            <h4>
-              Or... even easier, login with 
-            </h4>
+          <div class="col-md-12">
 
             <div class="text-align-center">    
 
-            <div class="vertical-center"> 
-            <button class="btn btn-primary btn-large" onclick="location.href='/auth/facebook'">
-              <h4>  
-                <span class="fa fa-facebook"></span>
-                facebook
-              </h4>          
-            </button>
-            <br/>
-            <br/>
+              <%= render 'static_pages/shared/social_login' %>
 
-            <button class="btn btn-primary btn-large" onclick="location.href='/auth/twitter'">
-              <h4>  
-                <span class="fa fa-twitter"></span>
-                Twitter
-              </h4>          
-            </button>
+            </div>
 
-            <br/>
-            <br/>
+  <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Collapsible Group Item #1
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
 
-            <button class="btn btn-primary btn-large" onclick="location.href='/auth/linkedin'">
-              <h4>  
-                <span class="fa fa-linkedin"></span>
-                Linkedin
-              </h4>          
-            </button>
-          </div>
-        </div>
-          
+
+    
+
 
           </div>
 

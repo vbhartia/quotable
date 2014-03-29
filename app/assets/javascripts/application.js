@@ -11,8 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 
+//= require bootstrap
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-//= require bootstrap
 //= require zeroclipboard
