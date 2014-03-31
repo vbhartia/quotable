@@ -1,21 +1,17 @@
 class AuthorsController < ApplicationController
 	def author_page
 
-		@quotes_author_to_render = Quote.where(:author => params[:author_slug])
+		@author = Author.where(:slug => params[:author_slug]).first
 
-		@author_to_render = params[:author_slug]
+		@quotes_author_to_render = @author.quotes
+
+		@author_to_render = @author.friendly_name
 
 	end
 
 	def all_authors
 
-		@authors = Array.new
-
-		Quote.all.each do |quote|
-			@authors << quote.author
-		end
-
-		@authors = @authors.uniq
+		@authors = Author.all
 
 	end
 

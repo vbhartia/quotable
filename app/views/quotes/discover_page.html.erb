@@ -48,14 +48,14 @@
 
 					<!-- get first character of last name -->
 
-					<% if author.split(" ").last[0] == current_letter  %>
+					<% if author.friendly_name.split(" ").last[0] == current_letter  %>
 
-						<%= link_to author, author_page_path(author) %>
+						<%= link_to author.friendly_name, author_page_path(author.slug) %>
 					<% else %>
-						<%= current_letter = author.split(" ").last[0] %>
+						<%= current_letter = author.friendly_name.split(" ").last[0] %>
 						<a name= <%= current_letter %>>
 						<br/>
-						<%= link_to author, author_page_path(author) %>
+						<%= link_to author.friendly_name, author_page_path(author.slug) %>
 					<% end %>
 
 					<br/>

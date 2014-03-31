@@ -9,14 +9,7 @@ class QuotesController < ApplicationController
 
 	def discover_page
 
-		@authors = Array.new
-
-		Quote.all.each do |quote|
-			@authors << quote.author
-		end
-
-		@authors = @authors.uniq
-
+		@authors = Author.all
 		@tags = Tag.all
 
 	end

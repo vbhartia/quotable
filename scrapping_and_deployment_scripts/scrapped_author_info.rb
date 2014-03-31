@@ -9,10 +9,10 @@
 @author.each do |author_to_add| 
 	author_db = Author.new
 
-	author_db.slug = author_to_add[:author]
+	author_db.slug = author_to_add[:author].gsub(".", "")
 	author_db.description = author_to_add[:content]
-	author_db.friendly_name = author_to_add[:author]
-	author_db.image_url = 'http://'+ author_to_add[:image]
+	author_db.friendly_name = author_to_add[:author].gsub("_", " ")
+	author_db.image_url = 'http://'+ author_to_add[:image][0..240]
 
 	author_db.save!
 

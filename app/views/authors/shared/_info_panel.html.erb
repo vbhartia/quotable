@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+	<div class="panel-body">
+		<b><%= @author.friendly_name %></b>
+
+		<br/>
+		<br/>
+		<%= image_tag @author.image_url %>
+
+		<br/>
+		<br/>
+		<%= @author.description %>		
+
+		<br/>
+		<br/>
+		Courtsey of <%= link_to "Wikepedia", ("http://en.wikipedia.org/wiki/" + @author.slug) %>
+
+		
+
+	</div>
+</div>
+

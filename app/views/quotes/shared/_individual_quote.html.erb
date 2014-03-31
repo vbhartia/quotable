@@ -20,7 +20,7 @@
     			<%= @quote_to_render.quote_text %>
           <br/>
 
-          <%= link_to @quote_to_render.author, author_page_path(@quote_to_render.author)  %>
+          <%= link_to @quote_to_render.author, author_page_path(@quote_to_render.author.gsub(' ', '_'))  %>
 
           <hr/>
 

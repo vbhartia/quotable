@@ -1,7 +1,7 @@
 
 <div class="page-header">
 	<h3>
-		<%= @author_to_render %>'s Quotes
+		<%= @author.friendly_name %>'s Quotes
 	</h3>
 </div>
 
@@ -25,6 +25,10 @@
 			Follow Button
 		</div>
 	</div>
+
+	<%= render "authors/shared/info_panel" %>
+
+
 
   </div>
 

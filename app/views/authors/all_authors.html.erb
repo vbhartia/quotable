@@ -5,6 +5,6 @@ Discover Quotes from the following authors
 
 <% @authors.each do |author| %>
 
-	<%= link_to author, author_page_path(author) %> <br/>
+	<%= link_to author.friendly_name, author_page_path(author.slug) %> <br/>
 
 <% end %> 
