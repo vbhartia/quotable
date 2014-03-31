@@ -8,6 +8,9 @@ class Quote < ActiveRecord::Base
 
   has_many :votes
 
+  has_many :author_associated_quote
+  has_many :authors, :through=> :author_associated_quote
+
   attr_accessible :author, :quote_text
 
   

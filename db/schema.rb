@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140326190910) do
+ActiveRecord::Schema.define(:version => 20140331020754) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -21,6 +21,29 @@ ActiveRecord::Schema.define(:version => 20140326190910) do
     t.integer  "user_id"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "author_associated_quote", :force => true do |t|
+    t.integer  "author_id"
+    t.integer  "quote_id"
+    t.datetime "assign_date"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "author_associated_quotes", :force => true do |t|
+    t.integer  "author_id"
+    t.integer  "quote_id"
+    t.datetime "assign_date"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "authors", :force => true do |t|
+    t.string "friendly_name"
+    t.string "slug"
+    t.text   "description"
+    t.string "image_url"
   end
 
   create_table "followerships", :force => true do |t|
