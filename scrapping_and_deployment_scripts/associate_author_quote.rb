@@ -6,7 +6,7 @@ Quote.all.each do |quote|
 
 	puts count
 
-	author_from_quote_slug = quote.author.gsub(' ', '_')
+	author_from_quote_slug = quote.author
 
 	author_to_associate = Author.where(:friendly_name => quote.author).first
 
